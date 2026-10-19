@@ -1,0 +1,247 @@
+<!doctype html>
+<html lang="he" dir="rtl"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#2456f0">
+<title>מדף</title>
+<link href="https://fonts.googleapis.com/css2?family=Heebo:wght@400;500;700;800&family=Rubik:wght@500;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#f3f5fa;--card:#fff;--ink:#0e1a3a;--mute:#66728f;--line:#e1e6f2;--pri:#1c47e6;--pri2:#e8eeff;box-sizing:border-box}
+@media(prefers-color-scheme:dark){:root:not([data-theme=light]){--bg:#0b1023;--card:#151c36;--ink:#eef1fb;--mute:#97a2c4;--line:#252e50;--pri:#6c8dff;--pri2:#1e2a57}}
+:root[data-theme=dark]{--bg:#0b1023;--card:#151c36;--ink:#eef1fb;--mute:#97a2c4;--line:#252e50;--pri:#6c8dff;--pri2:#1e2a57}
+*{box-sizing:border-box;margin:0}
+body{font:400 16px/1.5 Heebo,system-ui,sans-serif;background:var(--bg);color:var(--ink);padding-bottom:150px}
+h1,.bar b{font-family:Rubik,Heebo,sans-serif;font-weight:700}
+.top{background:#1c47e6;color:#fff;padding:calc(env(safe-area-inset-top,0px) + 16px) 20px 54px}
+.brand{display:flex;align-items:center;gap:12px;max-width:640px;margin:0 auto}
+.logo{width:40px;height:40px}.brand h1{font-size:28px;letter-spacing:-.3px}
+.w{max-width:640px;margin:0 auto;padding:0 16px}
+.st{display:grid;grid-template-columns:repeat(3,1fr);margin:-36px 0 14px;background:var(--card);border:1px solid var(--line);border-radius:10px;box-shadow:0 14px 28px -18px rgba(14,26,58,.5)}
+.st div{padding:14px 12px;font-size:12px;color:var(--mute)}
+.st div+div{border-inline-start:1px solid var(--line)}
+.st b{display:block;font:700 22px/1.2 Rubik,Heebo,sans-serif;color:var(--ink);margin-bottom:2px}
+.st .s1 b{color:var(--pri)}.st .s2 b{color:#0b8f78}.st .s3 b{color:#c77700}
+.al{background:#fff4d6;color:#7a4e00;border-radius:8px;padding:10px 12px;font-size:14px;margin-bottom:10px}
+.sr{display:flex;gap:8px;margin-bottom:12px}
+.q{flex:1;min-width:0;height:48px;padding:0 16px;padding-inline-start:46px;border:1px solid var(--line);border-radius:8px;background:var(--card) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2366728f' stroke-width='2.2' stroke-linecap='round'%3E%3Ccircle cx='11' cy='11' r='7'/%3E%3Cpath d='M20 20l-4-4'/%3E%3C/svg%3E") no-repeat right 16px center/18px;color:var(--ink);font:inherit}
+.sb{flex:none;width:48px;height:48px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--pri);display:grid;place-items:center;cursor:pointer}
+.ch{display:flex;gap:8px;overflow-x:auto;padding:2px 0 6px}
+#ch{margin:0 -16px 10px;padding:2px 16px 6px}
+.c{flex:none;height:36px;padding:0 14px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;font-size:14px;font-weight:500;cursor:pointer}
+.c.on{background:var(--cc,var(--pri));border-color:var(--cc,var(--pri));color:#fff}
+.it{display:flex;align-items:center;gap:12px;padding:12px;margin-bottom:8px;background:var(--card);border:1px solid var(--line);border-inline-start:4px solid var(--cc,var(--pri));border-radius:8px;cursor:pointer}
+.th{flex:none;width:58px;height:58px;border-radius:6px;background:var(--pri2) center/cover;display:grid;place-items:center;font-size:22px}
+.m{flex:1;min-width:0}.m b{display:block;font-size:16px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.tg{display:flex;flex-wrap:wrap;gap:4px;margin-top:4px;font-size:12px}
+.tg span{display:inline-flex;align-items:center;gap:4px;padding:1px 8px;border-radius:4px;color:var(--ink);background:color-mix(in srgb,var(--cc) 13%,transparent)}
+.tg span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--cc)}
+.mt{display:flex;flex-wrap:wrap;gap:2px 12px;margin-top:5px;font-size:12px;color:var(--mute)}.mt strong{color:var(--ink);font-weight:600}
+.r{display:flex;flex-direction:column;align-items:flex-end;gap:5px;font:700 16px Rubik,Heebo,sans-serif;white-space:nowrap}
+.wp{font:700 11px Heebo,sans-serif;color:color-mix(in srgb,var(--w) 70%,var(--ink));background:color-mix(in srgb,var(--w) 15%,transparent);padding:2px 8px;border-radius:4px}
+.pk{display:flex;gap:10px;align-items:center;margin-bottom:10px;font-size:14px}
+.em{text-align:center;color:var(--mute);padding:36px 16px;border:1.5px dashed var(--line);border-radius:10px}
+#ls.g{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+#ls.g .pk,#ls.g .em{grid-column:1/-1}
+#ls.g .it{flex-direction:column;align-items:stretch;margin:0;padding:8px;gap:8px;border-inline-start:1px solid var(--line);border-top:4px solid var(--cc)}
+#ls.g .th{width:100%;height:112px}#ls.g .tg,#ls.g .mt{display:none}
+#ls.g .r{flex-direction:row;justify-content:space-between;align-items:center;font-size:15px}
+.ghost{background:var(--pri2);color:var(--pri);border:0;border-radius:8px;padding:8px 14px;font:inherit;font-size:14px;font-weight:500;cursor:pointer}
+.nav{position:fixed;inset:auto 0 0 0;z-index:4;display:grid;grid-template-columns:repeat(4,1fr);background:var(--card);border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom,0px)}
+.nav button{display:flex;flex-direction:column;align-items:center;gap:3px;padding:9px 0 8px;border:0;background:none;color:var(--mute);font:inherit;font-size:12px;font-weight:500;cursor:pointer}
+.nav svg{width:22px;height:22px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.bg{background:#e5484d;color:#fff;border-radius:9px;padding:0 6px;font-size:11px;margin-inline-start:3px}
+.fab{position:fixed;left:16px;bottom:calc(76px + env(safe-area-inset-bottom,0px));z-index:3;width:56px;height:56px;border:0;border-radius:10px;background:#ffb020;color:#0e1a3a;font-size:30px;line-height:1;box-shadow:0 12px 24px -10px rgba(255,176,32,.9);cursor:pointer}
+.sh{position:fixed;inset:0;background:var(--bg);overflow:auto;z-index:5;padding-top:env(safe-area-inset-top,0px)}
+.sh[hidden]{display:none}
+.sh .w{padding:14px 16px 40px}
+.bar{position:sticky;top:0;z-index:1;display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 16px;background:var(--card);border-bottom:1px solid var(--line)}
+.bar b{font-size:20px}
+.lb{display:block;font-size:13px;font-weight:500;color:var(--mute);margin:16px 0 6px}
+.f input,.f select,.f textarea{width:100%;padding:12px 14px;border:1.5px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit}
+.f input:focus,.f select:focus,.f textarea:focus{outline:0;border-color:var(--pri);box-shadow:0 0 0 3px color-mix(in srgb,var(--pri) 18%,transparent)}
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pb{display:grid;place-items:center;height:124px;border:2px dashed var(--line);border-radius:10px;background:var(--card) center/cover;color:var(--mute);font-size:13px;cursor:pointer;text-align:center}
+.pri{display:block;width:100%;padding:14px;border:0;border-radius:8px;background:#1c47e6;color:#fff;font:inherit;font-weight:700;font-size:17px;margin:16px 0 0;cursor:pointer}
+.pri.dn{background:#e5484d;margin-top:10px}
+.kv{display:flex;justify-content:space-between;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}
+.kv span:first-child{color:var(--mute)}.kv span:last-child{font-weight:500;text-align:end}
+.w.f .kv button{flex:none}
+.so{display:block;width:100%;text-align:start;padding:15px 16px;margin-bottom:8px;border:1px solid var(--line);border-radius:8px;background:var(--card);color:var(--ink);font:inherit;font-weight:500;cursor:pointer}
+.so.on{background:#1c47e6;border-color:#1c47e6;color:#fff}
+.toast{position:fixed;bottom:100px;left:50%;transform:translateX(-50%);background:var(--ink);color:var(--bg);padding:10px 16px;border-radius:8px;z-index:9;font-size:14px}
+</style><link rel="manifest" href="manifest.webmanifest"><link rel="icon" type="image/png" href="icon-192.png"><link rel="apple-touch-icon" href="apple-touch-icon.png"><meta name="mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-title" content="מדף"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"></head><body>
+<header class=top><div class=brand><svg class=logo viewBox="0 0 48 48"><rect width=48 height=48 rx=10 fill="#fff" fill-opacity=".16"/><rect x=11 y=30 width=26 height=3 rx=1.5 fill="#fff"/><rect x=13 y=14 width=6 height=16 rx=1 fill="#fff"/><rect x=21 y=22 width=6 height=8 rx=1 fill="#b0c5ff"/><rect x=29 y=19 width=6 height=11 rx=1 fill="#ffb020"/></svg><h1>מדף</h1></div></header>
+<div class=w><div class=st id=st></div><div id=al hidden></div>
+<div class=sr><input class=q id=q type=search placeholder="חיפוש בכל הפריטים" oninput="f.q=this.value;list()"><button class=sb onclick=sortMenu() aria-label="הצגה ומיון"><svg width=22 height=22 viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.2 stroke-linecap=round stroke-linejoin=round><path d="M7 4v16M3 16l4 4 4-4M17 20V4M13 8l4-4 4 4"/></svg></button><button class=sb onclick="f.g=!f.g;list()" aria-label="תצוגת תמונות"><svg width=22 height=22 viewBox="0 0 24 24" fill=none stroke=currentColor stroke-width=2.2 stroke-linejoin=round><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg></button></div>
+<div class=ch id=ch></div><div id=ls></div></div>
+<nav class=nav><button onclick="closeS();scrollTo(0,0)"><svg viewBox="0 0 24 24"><path d="M3 11l9-8 9 8M5 10v10h14V10"/></svg>בית</button><button id=bl onclick=notif()><svg viewBox="0 0 24 24"><path d="M6 17h12l-2-3v-4a4 4 0 0 0-8 0v4zM10 20a2 2 0 0 0 4 0"/></svg><span id=bt>התראות</span></button><button onclick=tools()><svg viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4zM14 14h6v6h-6z"/></svg>כלים</button><button onclick=bk()><svg viewBox="0 0 24 24"><path d="M12 4v11M7 11l5 5 5-5M5 20h14"/></svg>גיבוי</button></nav>
+<button class=fab onclick="openForm()" aria-label="הוספת פריט">+</button>
+<div class=sh id=sh hidden></div>
+<script>
+const $=s=>document.querySelector(s),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const PAL=['#2456f0','#0b8f78','#c77700','#d93a6a','#7c4ddb','#d9551f','#0b86c4','#4d8a0b'];
+const USE={never:['לא השתמשתי',0],rare:['לעיתים רחוקות',3],month:['כמה פעמים בחודש',18],week:['כמה פעמים בשבוע',100],day:['כל יום',330]};
+const WORTH={good:['השתלם','#12a150'],mid:['בינוני','#e39a0b'],bad:['לא השתלם','#e5484d']};
+const NEED={always:'תמיד איתי',season:'עונתי',trip:'בטיולים',need:'לעת הצורך',stored:'מאוחסן'};
+let items=[],cats=[{id:'c1',n:'טיולים'},{id:'c2',n:'יומיומי'},{id:'c3',n:'אלקטרוניקה'},{id:'c4',n:'ציוד רפואי'}],f={q:'',c:null,pack:false},db=null,cur={};
+const num=n=>Math.round(n||0).toLocaleString('he-IL'),col=id=>PAL[Math.max(0,cats.findIndex(c=>c.id==id))%8],cn=id=>cats.find(c=>c.id==id)?.n||'';
+function toast(t){const e=document.createElement('div');e.className='toast';e.textContent=t;document.body.append(e);setTimeout(()=>e.remove(),2600)}
+const idb=(s,m,fn)=>new Promise((ok,no)=>{const t=db.transaction(s,m),q=fn(t.objectStore(s));t.oncomplete=()=>ok(q&&q.result);t.onerror=()=>no(t.error)});
+const put=it=>db&&idb('items','readwrite',s=>s.put(it)).catch(()=>toast('השמירה נכשלה'));
+const putCats=()=>db&&idb('meta','readwrite',s=>s.put(cats,'cats')).catch(()=>{});
+async function init(){
+ try{await new Promise((ok,no)=>{const r=indexedDB.open('barshuti',1);r.onupgradeneeded=()=>{r.result.createObjectStore('items',{keyPath:'id'});r.result.createObjectStore('meta')};r.onsuccess=()=>{db=r.result;ok()};r.onerror=()=>no()});
+ items=await idb('items','readonly',s=>s.getAll());const c=await idb('meta','readonly',s=>s.get('cats'));if(c)cats=c;lists=(await idb('meta','readonly',s=>s.get('lists')))||[];wish=(await idb('meta','readonly',s=>s.get('wish')))||[];found=(await idb('meta','readonly',s=>s.get('found')))||[];navigator.storage?.persist?.()}
+ catch(e){db=null;toast('האחסון לא זמין – הנתונים לא יישמרו')}
+ render()}
+const uv=i=>USE[i.use]?.[1]||0,nv=k=>i=>i[k]===''||i[k]==null?null:+i[k],cmp=(g,d)=>(x,y)=>{const a=g(x),b=g(y);return a==null?(b==null?0:1):b==null?-1:d*(a-b)};
+const SORT={name:(x,y)=>x.name.localeCompare(y.name,'he'),pa:cmp(nv('price'),1),pd:cmp(nv('price'),-1),ra:cmp(nv('resale'),1),rd:cmp(nv('resale'),-1),ud:cmp(uv,-1),ua:cmp(uv,1)};
+const SL={name:'שם (א–ת)',pa:'מחיר: מהזול ליקר',pd:'מחיר: מהיקר לזול',ra:'שווי ביד שנייה: מהזול ליקר',rd:'שווי ביד שנייה: מהיקר לזול',ud:'שימוש: מהשימושי ביותר למוזנח ביותר',ua:'שימוש: מהמוזנח ביותר לשימושי ביותר'};
+f.s=(()=>{try{return localStorage.getItem('argaz-s')}catch(e){}})()||'name';
+function sortMenu(){openS(`<div class=bar><b>הצגה</b><button class=ghost onclick=back()>חזרה</button></div><div class=w>${Object.entries(SL).map(([k,t])=>`<button class="so ${f.s==k?'on':''}" onclick="setS('${k}')">${t}</button>`).join('')}</div>`)}
+function setS(k){f.s=k;try{localStorage.setItem('argaz-s',k)}catch(e){}closeS();list()}
+let lists=[],wish=[],found=[];
+const putM=(k,v)=>db&&idb('meta','readwrite',s=>s.put(v,k)).catch(()=>{}),today=()=>new Date().toISOString().slice(0,10),
+scr=(t,b)=>openS(`<div class=bar><b>${t}</b><button class=ghost onclick=back()>חזרה</button></div><div class="w f">${b}</div>`),
+rows=a=>a.map(i=>`<div class=it style="--cc:${col((i.cats||[])[0])}" onclick="det('${i.id}')"><div class=th ${i.photo?`style="background-image:url(${i.photo})"`:''}>${i.photo?'':'📦'}</div><div class=m><b>${esc(i.name)}</b><div class=mt><span>שולם <strong>₪${num(i.price)}</strong></span><span>יד שנייה <strong>₪${num(i.resale)}</strong></span></div></div></div>`).join('')||'<p class=em>אין פריטים כאן.</p>';
+function tools(){scr('כלים',[["ins('neg')",'מוזנחים'],["ins('sell')",'מועמדים למכירה'],['sumry()','סיכום והשתלמות'],['loans()','הושאלו'],['maint()','תחזוקה'],['lsT()','רשימות טיול'],['wl()','רשימת משאלות'],['fnd()','השבת אבידה'],['locs()','מיקומים']].map(([c,t])=>`<button class=so onclick="${c}">${t}</button>`).join(''))}
+function ins(k){const n=own().filter(i=>USE[i.use]?.[1]<=3),a=k=='neg'?n.sort((x,y)=>(y.price||0)-(x.price||0)):n.filter(i=>i.resale>0).sort((x,y)=>y.resale-x.resale),s=a.reduce((t,i)=>t+(+(k=='neg'?i.price:i.resale)||0),0);
+scr(k=='neg'?'מוזנחים':'מועמדים למכירה',`<div class=al style="margin:0 0 12px">${k=='neg'?`כסף תקוע בפריטים שכמעט לא משתמשים בהם: ₪${num(s)}`:`אפשר לקבל בערך ₪${num(s)} ממכירת פריטים שלא בשימוש`}</div>${rows(a)}`)}
+function sumry(){const U=i=>USE[i.use]?.[1]||0,yr=i=>Math.max((Date.now()-new Date(i.date||Date.now()))/315576e5,1/12),cp=i=>i.price&&U(i)?i.price/(U(i)*yr(i)):null,u=own().filter(i=>cp(i)!=null).sort((a,b)=>cp(a)-cp(b)),
+t=a=>a.slice(0,5).map(i=>`<div class=kv><span>${esc(i.name)}</span><span>₪${cp(i).toFixed(cp(i)<10?1:0)} לשימוש</span></div>`).join('')||'<p class=em>חסרים נתוני מחיר ושימוש.</p>',
+w=Object.entries(WORTH).map(([k,v])=>`<div class=kv><span>${v[0]}</span><span>${own().filter(i=>i.worth==k).length}</span></div>`).join(''),
+c=cats.map(k=>{const a=own().filter(i=>(i.cats||[]).includes(k.id));return `<div class=kv><span>${esc(k.n)} (${a.length})</span><span>₪${num(a.reduce((s,i)=>s+(+i.price||0),0))}</span></div>`}).join('');
+scr('סיכום',`<p class=lb>הכי משתלמים (עלות נמוכה לשימוש)</p>${t(u)}<p class=lb>הכי יקרים לשימוש</p>${t([...u].reverse())}<p class=lb>איך הערכת את הקניות</p>${w}<p class=lb>סכום לפי קטגוריה</p>${c}`)}
+function loans(){const a=own().filter(i=>i.loan);scr('הושאלו',a.map(i=>`<div class=kv><span>${esc(i.name)}<br><small style="color:var(--mute)">אצל ${esc(i.loan)} · ${Math.floor((Date.now()-new Date(i.ld))/864e5)} ימים</small></span><button class=ghost onclick="ret('${i.id}')">חזר</button></div>`).join('')||'<p class=em>אין פריטים מושאלים. אפשר לסמן בעריכת פריט.</p>')}
+const ret=id=>{const i=items.find(x=>x.id==id);i.loan='';i.ld='';put(i);loans()};
+function maint(){const a=own().filter(i=>i.mt&&i.md).map(i=>({i,d:Math.ceil((new Date(i.ml).getTime()+i.md*864e5-Date.now())/864e5)})).sort((x,y)=>x.d-y.d);
+scr('תחזוקה',a.map(({i,d})=>`<div class=kv><span>${esc(i.name)}<br><small style="color:var(--mute)">${esc(i.mt)} · ${d<0?`באיחור של ${-d} ימים`:`בעוד ${d} ימים`}</small></span><button class=ghost onclick="mdone('${i.id}')">בוצע</button></div>`).join('')||'<p class=em>אין תזכורות. אפשר להוסיף בעריכת פריט, למשל: לטעון סוללה כל 90 יום.</p>')}
+const mdone=id=>{const i=items.find(x=>x.id==id);i.ml=today();put(i);maint()};
+function getN(){const now=Date.now(),a=[],dy=x=>(new Date(x).getTime()-now)/864e5;
+own().forEach(i=>{
+if(i.war){const d=Math.ceil(dy(i.war));if(d<=45&&d>=-30)a.push({i,d,t:'אחריות',s:new Date(i.war).toLocaleDateString('he-IL'),h:d>=0?`האחריות על ${i.name} נגמרת בעוד ${d} ימים`:`האחריות על ${i.name} פגה לפני ${-d} ימים`})}
+if(i.mt&&i.md){const d=Math.ceil(dy(i.ml)+i.md);if(d<=7)a.push({i,d,t:'תחזוקה',h:`${i.mt}: ${i.name}`,s:d<0?`באיחור של ${-d} ימים`:d==0?'היום':`בעוד ${d} ימים`})}
+if(i.loan){const n=Math.floor(-dy(i.ld));if(n>=14)a.push({i,d:1,k:8-n/1e4,t:'הושאל',h:`${i.name} אצל ${i.loan}`,s:`כבר ${n} ימים`})}});
+return a.sort((x,y)=>(x.k??x.d)-(y.k??y.d))}
+function bellUp(){const n=getN().length;$('#bt').innerHTML='התראות'+(n?` <span class=bg>${n}</span>`:'')}
+function notif(){scr('התראות',getN().map(n=>`<div class=it style="--cc:${n.t!='הושאל'&&n.d<=0?'#e5484d':col((n.i.cats||[])[0])}" onclick="det('${n.i.id}')"><div class=th ${n.i.photo?`style="background-image:url(${n.i.photo})"`:''}>${n.i.photo?'':'📦'}</div><div class=m><b>${esc(n.h)}</b><div class=mt><span>${n.t}</span><span>${esc(n.s||'')}</span></div></div></div>`).join('')||'<p class=em>אין התראות כרגע.</p>')}
+const mdone2=id=>{const i=items.find(x=>x.id==id);i.ml=today();put(i);bellUp();det(id)},ret2=id=>{const i=items.find(x=>x.id==id);i.loan='';i.ld='';put(i);bellUp();det(id)};
+const own=()=>items.filter(i=>!i.gone),GONE={lost:'אבד',broken:'נשבר',spoiled:'התקלקל',sold:'נמכר',given:'ניתן או נתרם',other:'אחר'},FS={mine:'אצלי',ret:'הושבה לבעליה'};
+function fnd(){const a=found.slice().sort((x,y)=>(x.st=='ret')-(y.st=='ret')||(y.date||'').localeCompare(x.date||''));
+scr('השבת אבידה',(a.map(x=>`<div class=it style="--cc:${x.st=='ret'?'#12a150':'#c77700'}" onclick="fndF('${x.id}')"><div class=th ${x.photo?`style="background-image:url(${x.photo})"`:''}>${x.photo?'':'🔎'}</div><div class=m><b>${esc(x.name)}</b><div class=mt>${x.where?`<span>נמצא ב <strong>${esc(x.where)}</strong></span>`:''}${x.date?`<span>${new Date(x.date).toLocaleDateString('he-IL')}</span>`:''}</div></div><div class=r><small class=wp style="--w:${x.st=='ret'?'#12a150':'#c77700'}">${FS[x.st||'mine']}</small></div></div>`).join('')||'<p class=em>אין אבידות כרגע.</p>')+`<button class=pri onclick="fndF()">הוספת אבידה שמצאתי</button>`)}
+function fndF(id){const x=found.find(q=>q.id==id);cur=x?{...x}:{id:'f'+Date.now(),st:'mine',date:today()};const v=k=>esc(cur[k]);
+scr(x?'אבידה':'אבידה חדשה',`<label class=pb id=ph_photo ${cur.photo?`style="background-image:url(${cur.photo})"`:''}>${cur.photo?'':'📷 תמונה'}<input type=file accept="image/*" hidden onchange="pick(this,'photo')"></label>
+<label class=lb>מה נמצא</label><input id=an value="${v('name')}">
+<label class=lb>איפה נמצא</label><input id=aw value="${v('where')}">
+<label class=lb>מתי נמצא</label><input id=ad type=date value="${v('date')}">
+<label class=lb>סימנים מזהים (לאימות הבעלים, לא לפרסם)</label><textarea id=am rows=2>${v('marks')}</textarea>
+<label class=lb>פרטי הבעלים / מי פנה</label><input id=ao value="${v('owner')}">
+<label class=lb>סטטוס</label><select id=as><option value=mine ${cur.st!='ret'?'selected':''}>אצלי</option><option value=ret ${cur.st=='ret'?'selected':''}>הושבה לבעליה</option></select>
+<label class=lb>הערות</label><textarea id=at rows=2>${v('note')}</textarea>
+<button class=pri onclick=fndS()>שמירה</button>${x?`<button class="pri dn" onclick="fndX('${id}',this)">מחיקה</button>`:''}`)}
+function fndS(){const n=$('#an').value.trim();if(!n){toast('צריך להזין מה נמצא');return}
+Object.assign(cur,{name:n,where:$('#aw').value,date:$('#ad').value,marks:$('#am').value,owner:$('#ao').value,st:$('#as').value,note:$('#at').value});
+const k=found.findIndex(x=>x.id==cur.id);k<0?found.push(cur):found[k]=cur;putM('found',found);toast('נשמר');back()}
+function fndX(id,b){if(!b.dataset.s){b.dataset.s=1;b.textContent='לחצו שוב כדי למחוק';return}found=found.filter(x=>x.id!=id);putM('found',found);back()}
+const lp=i=>(i.loc||'').split(/\s*[>\/›]\s*/).map(x=>x.trim()).filter(Boolean);
+function locs(p){p=p||'';const pa=p?p.split('>'):[],sub={},here=[],none=p?[]:own().filter(i=>!i.loc);
+own().filter(i=>i.loc).forEach(i=>{const l=lp(i);if(pa.every((x,k)=>l[k]==x)){if(l.length==pa.length)here.push(i);else{const n=l[pa.length];(sub[n]=sub[n]||[]).push(i)}}});
+const cnt=Object.keys(sub).length;
+scr(p?esc(pa.join(' › ')):'מיקומים',(!p?'<p style="color:var(--mute)">כדי ליצור מיקום בתוך מיקום, כתבו בשדה "איפה הוא נמצא": סלון > ארון > מגירה 2</p>':'')
++Object.entries(sub).sort((a,b)=>a[0].localeCompare(b[0],'he')).map(([n,a])=>`<button class=so data-p="${esc((p?p+'>':'')+n)}" onclick="locs(this.dataset.p)">${esc(n)} (${a.length})</button>`).join('')
++(here.length?`<p class=lb>כאן בדיוק (${here.length})</p>`+rows(here):'')
++(none.length?`<p class=lb>ללא מיקום (${none.length})</p>`+rows(none):'')
++(!cnt&&!here.length&&!none.length?'<p class=em>אין פריטים כאן.</p>':''))}
+async function dl(fn,data){let d=null;try{d=await window.claude?.use('downloads')}catch(e){}
+if(d){try{await d.save({filename:fn,data});toast('נשמר')}catch(e){if(e.code!='declined')toast('השמירה נכשלה')}return}
+const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([data],{type:'text/csv;charset=utf-8'}));a.download=fn;a.click();toast('נשמר')}
+function csvX(){const q=v=>'"'+String(v??'').replace(/"/g,'""')+'"',H=['שם','קטגוריות','מחיר','תאריך קנייה','חנות','שימוש','האם השתלם','מתי צריך','שווי ביד שנייה','סוף אחריות','מיקום','הושאל ל','תחזוקה','מצב','פרטי מצב','הערות'];
+const L=items.map(i=>[i.name,(i.cats||[]).map(cn).join(', '),i.price,i.date,i.store,USE[i.use]?.[0],WORTH[i.worth]?.[0],NEED[i.need],i.resale,i.war,i.loc,i.loan,i.mt?i.mt+(i.md?' כל '+i.md+' ימים':''):'',i.gone?GONE[i.gone]:'ברשותי',i.gn,i.note].map(q).join(','));
+dl(`madaf-${today()}.csv`,'\ufeff'+[H.map(q).join(','),...L].join('\r\n'))}
+function lsT(){scr('רשימות טיול',lists.map(l=>`<button class=so onclick="lsO('${l.id}')">${esc(l.n)} (${l.r.filter(r=>r.k).length}/${l.r.length})</button>`).join('')+`<div class=g2 style="grid-template-columns:1fr auto;margin-top:12px"><input id=ln placeholder="שם רשימה חדשה, למשל: טיול מדבר"><button class=ghost onclick=lsN()>יצירה</button></div>`)}
+function lsN(){const n=$('#ln').value.trim();if(!n)return;const l={id:'l'+Date.now(),n,r:[]};lists.push(l);putM('lists',lists);lsO(l.id)}
+function lsO(id){const l=lists.find(x=>x.id==id),rw=l.r.map((r,k)=>{const it=r.i&&items.find(x=>x.id==r.i);return `<div class=kv style="align-items:center"><label style="display:flex;gap:10px;align-items:center;flex:1"><input type=checkbox style="width:22px;height:22px" ${r.k?'checked':''} onchange="lsK('${id}',${k})">${esc(it?it.name:(r.t||'פריט שנמחק'))}</label><span style="display:flex;gap:6px;align-items:center"><button class=ghost onclick="lsQ('${id}',${k},-1)">−</button>${r.q}<button class=ghost onclick="lsQ('${id}',${k},1)">+</button><button class=ghost onclick="lsD('${id}',${k})">✕</button></span></div>`}).join('');
+scr(esc(l.n),`${rw||'<p class=em>הרשימה ריקה.</p>'}<label class=lb>הוספת פריט מהמדף</label><select onchange="lsA('${id}',this.value)"><option value="">בחירה…</option>${own().sort(SORT.name).map(i=>`<option value="${i.id}">${esc(i.name)}</option>`).join('')}</select><label class=lb>או פריט שאין במדף</label><div class=g2 style="grid-template-columns:1fr auto"><input id=lt placeholder="למשל: מים"><button class=ghost onclick="lsT2('${id}')">הוספה</button></div><button class=pri onclick="lsR('${id}')">איפוס סימונים</button><button class=pri style="background:var(--pri2);color:var(--pri);box-shadow:none" onclick="lsC('${id}')">שכפול הרשימה</button><button class="pri dn" onclick="lsX('${id}',this)">מחיקת הרשימה</button>`)}
+const lsv=(id,fn)=>{fn(lists.find(x=>x.id==id));putM('lists',lists);lsO(id)},lsK=(id,k)=>{const r=lists.find(x=>x.id==id).r[k];r.k=!r.k;putM('lists',lists)},lsQ=(id,k,d)=>lsv(id,l=>l.r[k].q=Math.max(1,l.r[k].q+d)),lsD=(id,k)=>lsv(id,l=>l.r.splice(k,1)),lsA=(id,v)=>v&&lsv(id,l=>l.r.push({i:v,q:1,k:false})),lsT2=id=>{const t=$('#lt').value.trim();t&&lsv(id,l=>l.r.push({t,q:1,k:false}))},lsR=id=>lsv(id,l=>l.r.forEach(r=>r.k=false)),
+lsC=id=>{const l=lists.find(x=>x.id==id),c={...l,id:'l'+Date.now(),n:l.n+' (עותק)',r:l.r.map(r=>({...r,k:false}))};lists.push(c);putM('lists',lists);lsO(c.id)};
+function lsX(id,b){if(!b.dataset.s){b.dataset.s=1;b.textContent='לחצו שוב כדי למחוק';return}lists=lists.filter(l=>l.id!=id);putM('lists',lists);back()}
+function wl(){const m=n=>{const ws=n.split(/\s+/).filter(x=>x.length>2);return own().filter(i=>ws.some(w=>i.name.includes(w))).slice(0,4).map(i=>i.name)},
+r=wish.map(w=>{const s=m(w.n);return `<div class=kv style="flex-direction:column"><div style="display:flex;justify-content:space-between;gap:8px"><b>${esc(w.n)}</b><span>${w.p?'₪'+num(w.p):''}</span></div>${s.length?`<div class=al>כבר יש לך משהו דומה: ${s.map(esc).join(', ')}</div>`:''}<div style="display:flex;gap:8px;margin-top:8px"><button class=ghost onclick="wBuy('${w.id}')">קניתי</button><button class=ghost onclick="wDel('${w.id}')">מחיקה</button></div></div>`}).join('');
+scr('רשימת משאלות',(r||'<p class=em>הרשימה ריקה.</p>')+`<label class=lb>מה אתה רוצה לקנות?</label><div class=g2><input id=wn placeholder="שם"><input id=wp type=number inputmode=decimal placeholder="מחיר משוער"></div><button class=pri onclick=wAdd()>הוספה</button>`)}
+function wAdd(){const n=$('#wn').value.trim();if(!n)return;wish.push({id:'w'+Date.now(),n,p:$('#wp').value});putM('wish',wish);wl()}
+const wDel=id=>{wish=wish.filter(w=>w.id!=id);putM('wish',wish);wl()},wBuy=id=>{const w=wish.find(x=>x.id==id);wDel(id);closeS();openForm();$('#fn').value=w.n;$('#fp').value=w.p||''};
+function render(){stats();chips();list()}
+function stats(){const O=own(),p=O.reduce((a,i)=>a+(+i.price||0),0),r=O.reduce((a,i)=>a+(+i.resale||0),0),now=Date.now(),dd=i=>(new Date(i.war)-now)/864e5;
+ $('#st').innerHTML=`<div class=s1><b>${O.length}</b>פריטים</div><div class=s2><b>₪${num(p)}</b>שילמתי</div><div class=s3><b>₪${num(r)}</b>שווי ביד שנייה</div>`;
+ bellUp();$('#al').innerHTML='';[].filter(i=>i.war&&dd(i)>=0&&dd(i)<=45).map(i=>`<div class=al>האחריות על ${esc(i.name)} נגמרת בעוד ${Math.ceil(dd(i))} ימים</div>`).join('')}
+function chips(){$('#ch').innerHTML=`<button class="c ${f.c?'':'on'}" onclick="setC(null)">הכול</button>`+cats.map(c=>`<button class="c ${f.c==c.id?'on':''}" style="--cc:${col(c.id)}" onclick="setC('${c.id}')">${esc(c.n)}</button>`).join('')+`<button class="c ${f.c=='gone'?'on':''}" style="--cc:#6b7694" onclick="setC('gone')">לא ברשותי</button>`}
+function setC(id){f.c=id;f.pack=false;chips();list()}
+function list(){const q=f.q.trim().toLowerCase();
+ const a=items.filter(i=>(f.c=='gone'?!!i.gone:!i.gone)&&(!f.c||f.c=='gone'||(i.cats||[]).includes(f.c))&&(!q||(i.name+' '+(i.cats||[]).map(cn).join(' ')+' '+(i.loc||'')).toLowerCase().includes(q))).sort((x,y)=>(SORT[f.s]||SORT.name)(x,y)||SORT.name(x,y));
+ let h='';
+ if(f.c&&f.c!='gone'){const t=a.filter(i=>i.packed).length;h+=`<div class=pk><button class=ghost onclick="f.pack=!f.pack;list()">${f.pack?'סיום אריזה':'מצב אריזה'}</button>${f.pack?`<span>${t}/${a.length} נארזו</span><button class=ghost onclick="resetPack()">איפוס</button>`:''}</div>`}
+ h+=a.map(i=>`<div class=it style="--cc:${col((i.cats||[])[0])}" onclick="${f.pack?`pack('${i.id}')`:`det('${i.id}')`}">${f.pack?`<input type=checkbox ${i.packed?'checked':''} style="width:22px;height:22px;pointer-events:none">`:''}<div class=th ${i.photo?`style="background-image:url(${i.photo})"`:''}>${i.photo?'':'📦'}</div><div class=m><b>${esc(i.name)}</b><div class=tg>${(i.cats||[]).map(c=>`<span style="--cc:${col(c)}">${esc(cn(c))}</span>`).join('')}</div>${i.loc||i.resale||i.gone?`<div class=mt>${i.gone?`<span><strong>${GONE[i.gone]||''}</strong>${i.gn?' · '+esc(i.gn):''}</span>`:''}${i.loc?`<span>מיקום <strong>${esc(i.loc)}</strong></span>`:''}${i.resale?`<span>יד שנייה <strong>₪${num(i.resale)}</strong></span>`:''}</div>`:''}</div><div class=r>${i.price?'₪'+num(i.price):''}${i.worth?`<small class=wp style="--w:${WORTH[i.worth][1]}">${WORTH[i.worth][0]}</small>`:''}</div></div>`).join('');
+ $('#ls').className=f.g?'g':'';$('#ls').innerHTML=h||`<p class=em>${items.length?'לא נמצאו פריטים.':'עוד אין פריטים. לחצו על + כדי להוסיף את הפריט הראשון.'}</p>`}
+function pack(id){const i=items.find(x=>x.id==id);i.packed=!i.packed;put(i);list()}
+function resetPack(){items.filter(i=>(i.cats||[]).includes(f.c)&&i.packed).forEach(i=>{i.packed=false;put(i)});list()}
+const openS=h=>{const s=$('#sh');s.innerHTML=h;s.hidden=false;s.scrollTop=0},closeS=()=>{$('#sh').hidden=true;const n=hd;hd=0;stk=[];cur2=null;if(n){skip=true;history.go(-n);setTimeout(()=>skip=false,500)}};
+function det(id){const i=items.find(x=>x.id==id),yrs=Math.max((Date.now()-new Date(i.date||Date.now()))/315576e5,1/12),u=USE[i.use]?.[1]||0,cpu=i.price&&u?i.price/(u*yrs):null,
+ kv=(k,v)=>v?`<div class=kv><span>${k}</span><span>${v}</span></div>`:'',d=x=>x&&new Date(x).toLocaleDateString('he-IL');
+ openS(`<div class=bar><b>${esc(i.name)}</b><button class=ghost onclick=back()>חזרה</button></div><div class=w>${i.photo?`<img src="${i.photo}" style="width:100%;border-radius:18px;margin-bottom:8px">`:''}`
+ +kv('מחיר',i.price&&'₪'+num(i.price))+kv('נקנה',d(i.date))+kv('חנות',esc(i.store))+kv('קטגוריות',(i.cats||[]).map(cn).map(esc).join(', '))+kv('שימוש',USE[i.use]?.[0])
+ +kv('עלות לשימוש (הערכה)',cpu&&'₪'+cpu.toFixed(cpu<10?1:0))+kv('האם השתלם',i.worth&&`<b style="color:${WORTH[i.worth][1]}">${WORTH[i.worth][0]}</b>`)+kv('מתי צריך',NEED[i.need])
+ +kv('שווי ביד שנייה',i.resale&&'₪'+num(i.resale))+kv('סוף אחריות',d(i.war))+kv('איפה נמצא',esc(i.loc))+kv('מצב',i.gone&&esc(GONE[i.gone]||'')+(i.gn?' · '+esc(i.gn):''))+kv('הושאל ל',esc(i.loan))+kv('תחזוקה',i.mt&&esc(i.mt)+(i.md?' · כל '+i.md+' ימים':''))+kv('הערות',esc(i.note))
+ +(i.receipt?`<p class=lb>קבלה</p><img src="${i.receipt}" style="width:100%;border-radius:14px">`:'')
+ +`${i.mt&&i.md?`<button class=pri onclick="mdone2('${i.id}')">סימון תחזוקה כבוצעה</button>`:''}${i.loan?`<button class=pri onclick="ret2('${i.id}')">הפריט חזר</button>`:''}<button class=pri onclick="openForm('${i.id}')">עריכה</button><button class="pri dn" onclick="del('${i.id}',this)">מחיקה</button></div>`)}
+function del(id,b){if(!b.dataset.s){b.dataset.s=1;b.textContent='לחצו שוב כדי למחוק';return}items=items.filter(i=>i.id!=id);db&&idb('items','readwrite',s=>s.delete(id));closeS();render()}
+function openForm(id){const i=items.find(x=>x.id==id);cur=i?{...i,cats:[...(i.cats||[])]}:{id:'i'+Date.now(),cats:f.c?[f.c]:[],use:'week',need:'need'};
+ const v=k=>esc(cur[k]);
+ openS(`<div class=bar><b>${i?'עריכת פריט':'פריט חדש'}</b><button class=ghost onclick=back()>חזרה</button></div><div class="w f">
+<div class=g2>${[['photo','תמונת הפריט'],['receipt','תמונת קבלה']].map(([k,t])=>`<label class=pb id=ph_${k} ${cur[k]?`style="background-image:url(${cur[k]})"`:''}>${cur[k]?'':'📷 '+t}<input type=file accept="image/*" hidden onchange="pick(this,'${k}')"></label>`).join('')}</div>
+<label class=lb>שם הפריט</label><input id=fn value="${v('name')}" placeholder="למשל: מצלמת אקשן">
+<div class=g2><div><label class=lb>מחיר (₪)</label><input id=fp type=number inputmode=decimal value="${v('price')}"></div><div><label class=lb>תאריך קנייה</label><input id=fd type=date value="${v('date')}"></div></div>
+<label class=lb>חנות</label><input id=fs value="${v('store')}">
+<label class=lb>קטגוריות (אפשר כמה)</label><div class=ch style="flex-wrap:wrap" id=fc></div>
+<div class=g2 style="grid-template-columns:1fr auto"><input id=nci placeholder="קטגוריה חדשה"><button class=ghost onclick=nc()>הוספה</button></div>
+<label class=lb>כמה אני משתמש בו</label><div class=ch style="flex-wrap:wrap" id=fu></div>
+<label class=lb>האם הקנייה השתלמה?</label><div class=ch id=fw2></div>
+<label class=lb>מתי אני צריך אותו</label><select id=fnd>${Object.entries(NEED).map(([k,t])=>`<option value=${k} ${cur.need==k?'selected':''}>${t}</option>`).join('')}</select>
+<div class=g2><div><label class=lb>שווי ביד שנייה (₪)</label><input id=fr type=number inputmode=decimal value="${v('resale')}"></div><div><label class=lb>סוף אחריות</label><input id=fwr type=date value="${v('war')}"></div></div>
+<label class=lb>איפה הוא נמצא</label><input id=fl list=dl placeholder="למשל: סלון > ארון > מגירה 2" value="${v('loc')}"><datalist id=dl>${[...new Set(items.map(i=>i.loc).filter(Boolean))].map(l=>`<option value="${esc(l)}">`).join('')}</datalist>
+<label class=lb>האם הפריט עדיין ברשותי?</label><select id=fg><option value="">כן, עדיין יש לי</option>${Object.entries(GONE).map(([k,t])=>`<option value="${k}" ${cur.gone==k?'selected':''}>${t}</option>`).join('')}</select>
+<label class=lb>למה / פרטים (אם כבר אין לי)</label><input id=fgn value="${v('gn')}">
+<label class=lb>הושאל ל (אם הושאל)</label><input id=fb value="${v('loan')}">
+<div class=g2><div><label class=lb>תחזוקה: מה לעשות</label><input id=fm value="${v('mt')}" placeholder="לטעון סוללה"></div><div><label class=lb>כל כמה ימים</label><input id=fmd type=number inputmode=numeric value="${v('md')}"></div></div>
+<label class=lb>הערות</label><textarea id=fo rows=3>${v('note')}</textarea>
+<button class=pri onclick=save()>שמירה</button></div>`);fchips()}
+function fchips(){
+ $('#fc').innerHTML=cats.map(c=>`<button class="c ${cur.cats.includes(c.id)?'on':''}" style="--cc:${col(c.id)}" onclick="tc('${c.id}')">${esc(c.n)}</button>`).join('');
+ $('#fu').innerHTML=Object.entries(USE).map(([k,u])=>`<button class="c ${cur.use==k?'on':''}" onclick="cur.use='${k}';fchips()">${u[0]}</button>`).join('');
+ $('#fw2').innerHTML=Object.entries(WORTH).map(([k,w])=>`<button class="c ${cur.worth==k?'on':''}" style="--cc:${w[1]}" onclick="cur.worth=cur.worth=='${k}'?'':'${k}';fchips()">${w[0]}</button>`).join('')}
+const tc=id=>{const a=cur.cats,i=a.indexOf(id);i<0?a.push(id):a.splice(i,1);fchips()};
+function nc(){const n=$('#nci').value.trim();if(!n)return;const c={id:'c'+Date.now(),n};cats.push(c);cur.cats.push(c.id);putCats();$('#nci').value='';fchips();chips()}
+function save(){const n=$('#fn').value.trim();if(!n){toast('צריך להזין שם לפריט');$('#fn').focus();return}
+ const g=id=>$(id).value,nm=id=>g(id)===''?'':+g(id);
+ Object.assign(cur,{upd:Date.now(),gone:g('#fg'),gn:g('#fgn'),gd:g('#fg')?(cur.gd||today()):'',loan:g('#fb'),ld:g('#fb')?(cur.ld||new Date().toISOString().slice(0,10)):'',mt:g('#fm'),md:nm('#fmd'),ml:cur.ml||(g('#fm')&&g('#fmd')?new Date().toISOString().slice(0,10):''),name:n,price:nm('#fp'),date:g('#fd'),store:g('#fs'),need:g('#fnd'),resale:nm('#fr'),war:g('#fwr'),loc:g('#fl'),note:g('#fo')});
+ const x=items.findIndex(i=>i.id==cur.id);x<0?items.push(cur):items[x]=cur;put(cur);closeS();render();toast('נשמר')}
+async function pick(inp,k){const file=inp.files[0];if(!file)return;
+ try{const b=await createImageBitmap(file),s=Math.min(1,720/Math.max(b.width,b.height)),c=document.createElement('canvas');c.width=b.width*s;c.height=b.height*s;c.getContext('2d').drawImage(b,0,0,c.width,c.height);
+ cur[k]=c.toDataURL('image/jpeg',.72);const e=$('#ph_'+k);e.style.backgroundImage=`url(${cur[k]})`;if(e.firstChild.nodeType==3)e.firstChild.textContent=''}
+ catch(e){toast('לא הצלחתי לטעון את התמונה')}}
+function bk(){openS(`<div class=bar><b>גיבוי ושחזור</b><button class=ghost onclick=back()>חזרה</button></div><div class=w><p style="color:var(--mute)">שומרים קובץ גיבוי, מעבירים אותו לטלפון השני, ושם לוחצים על "שחזור מקובץ".</p><button class=pri onclick=exp()>שמירת קובץ גיבוי</button><button class=pri style="background:var(--pri2);color:var(--pri);box-shadow:none" onclick=csvX()>ייצוא לאקסל (CSV)</button><label class=pri style="display:block;text-align:center;background:var(--pri2);color:var(--pri)">שחזור מקובץ<input type=file accept=".json,application/json" hidden onchange="imp(this)"></label></div>`)}
+async function exp(){let d=null;try{d=await window.claude?.use('downloads')}catch(e){}
+ if(!d){const a=document.createElement('a');a.href=URL.createObjectURL(new Blob([JSON.stringify({v:3,items,cats,lists,wish,found})],{type:'application/json'}));a.download=`madaf-backup-${today()}.json`;a.click();toast('הגיבוי נשמר');return}
+ try{await d.save({filename:`madaf-backup-${new Date().toISOString().slice(0,10)}.json`,data:JSON.stringify({v:3,items,cats,lists,wish,found})});toast('הגיבוי נשמר')}catch(e){if(e.code!='declined')toast('השמירה נכשלה')}}
+async function imp(inp){try{const j=JSON.parse(await inp.files[0].text());if(!Array.isArray(j.items))throw 0;
+ const m=new Map(items.map(i=>[i.id,i]));j.items.forEach(i=>{const o=m.get(i.id);if(!o||(i.upd||0)>=(o.upd||0))m.set(i.id,i)});items=[...m.values()];
+ const ids=new Set(cats.map(c=>c.id));(j.cats||[]).forEach(c=>ids.has(c.id)||cats.push(c));const mg=(a,b)=>{const s=new Set(a.map(x=>x.id));(b||[]).forEach(x=>s.has(x.id)||a.push(x))};mg(lists,j.lists);mg(wish,j.wish);mg(found,j.found);putM('found',found);putM('lists',lists);putM('wish',wish);
+ if(db){await idb('items','readwrite',s=>{items.forEach(i=>s.put(i))});putCats()}
+ closeS();render();toast(`שוחזרו ${j.items.length} פריטים`)}catch(e){toast('הקובץ לא תקין')}}
+if('serviceWorker' in navigator)navigator.serviceWorker.register('sw.js').catch(()=>{});
+let stk=[],hd=0,cur2=null,go=false,skip=false;
+const shown=()=>!$('#sh').hidden,back=()=>{hd>0?history.back():closeS()};
+['tools','ins','sumry','loans','maint','lsT','lsO','wl','notif','det','sortMenu','bk','openForm','fnd','fndF','locs'].forEach(n=>{const o=window[n];window[n]=function(...a){const k=n+JSON.stringify(a);
+ if(!go){if(!shown()){stk=[];hd=1;history.pushState(1,'')}else if(cur2&&cur2.k!=k){stk.push(cur2);hd++;history.pushState(1,'')}}
+ cur2={k,c:()=>o.apply(null,a)};return o.apply(null,a)}});
+addEventListener('popstate',()=>{if(skip){skip=false;return}if(!shown())return;hd=Math.max(0,hd-1);const p=stk.pop();if(p){go=true;cur2=p;p.c();go=false}else{$('#sh').hidden=true;cur2=null;hd=0}});
+init();
+</script></body></html>
